@@ -19,6 +19,7 @@
 body {
   background: radial-gradient(50% 50% at 50% 50%, #0d0705 0%, #150d09 100%);
   height: 100vh;
+  font-family: var(--font-poppins);
 }
 
 .blue-blur {
@@ -29,4 +30,10 @@ body {
     rgba(217, 217, 217, 0) 85.34%
   );
   backdrop-filter: blur(2px);
+  color: white;
+}
+
+.chat-border{
+  border-radius: 0.9375rem;
+  background-image: linear-gradient(206deg, #292929 17.56%, #424242 48.72%, #474747 66.39%, #434243 74.56%, #303030 85.66%, #1B1B1B 102.7%);
 }
