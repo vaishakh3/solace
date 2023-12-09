@@ -24,7 +24,7 @@ const Sidebar = () => {
               <p>Home</p>
             </Link>
 
-            <Link href="/" className={addActiveClass("/search")}>
+            <Link href="/search" className={addActiveClass("/search")}>
               <Search />
               <p>Search</p>
             </Link>
