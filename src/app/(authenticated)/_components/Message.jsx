@@ -11,7 +11,7 @@ function Message({ message, from }) {
           )} src={from === "bot" ? "/logo.png": "cover.png"} alt="" />
         </div>
         <div className={cn(
-          "rounded-[1.875rem] flex-grow text-[#A8A8A8] font-poppins",
+          "rounded-[1.875rem] flex-grow text-[#A8A8A8]",
           from === "bot" && "text-left",
           from === "user" && "text-right"
         )}>
