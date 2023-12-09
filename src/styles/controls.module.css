@@ -1,0 +1,4 @@
+.volume_bar_container{
+  display: flex;
+  gap: 12px;
+}
