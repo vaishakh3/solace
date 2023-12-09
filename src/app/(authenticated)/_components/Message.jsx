@@ -8,10 +8,10 @@ function Message({ message, from }) {
               "w-8 h-8 rounded-full",
               from === "bot" && "mr-auto",
               from === "user" && "ml-auto"
-          )} src={from === "bot" ? "/logo.png": "cover.png"} alt="" />
+          )} src={from === "bot" ? "/images/logo.png": "/images/cover.png"} alt="" />
         </div>
         <div className={cn(
-          "rounded-[1.875rem] flex-grow text-[#A8A8A8]",
+          "rounded-[1.875rem] flex-grow text-[#A8A8A8] text-sm",
           from === "bot" && "text-left",
           from === "user" && "text-right"
         )}>
