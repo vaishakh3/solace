@@ -17,6 +17,7 @@ const AudioControl = () => {
         {muted ? <VolumeX /> : <Volume2 />}
       </button>
       <input
+        style={{ height: "3px" }}
         type="range"
         min={0}
         max={1}

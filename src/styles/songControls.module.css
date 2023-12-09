@@ -1,0 +1,22 @@
+.wrapper{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+.control_btns{
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.music_slider{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
