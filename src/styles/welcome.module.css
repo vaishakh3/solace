@@ -1,0 +1,57 @@
+.wrapper {
+  padding: 40px 60px;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/welcome_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.signIn {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.151px;
+}
+
+.wrapper nav {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.title h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 160px;
+  font-weight: 400;
+  line-height: 92px;
+}
+
+.gradient {
+  background: var(
+    --baltic-rose-linear-gradient,
+    linear-gradient(180deg, #3e2d3f 0%, #8d645c 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #fff;
+  font-size: 27.8px;
+  font-weight: 400;
+  text-align: center;
+}
