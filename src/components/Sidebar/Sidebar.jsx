@@ -11,11 +11,11 @@ const Sidebar = () => {
     return path === pathname ? "text-white" : "text-gray-400";
   };
   return (
-    <div>
+    <div className="h-full flex flex-col">
       <div className="p-6">
         <img src="/images/e1even.svg" alt="e1even_icon" />
       </div>
-      <div className={`${styles.nav_wrapper}`}>
+      <div className={`${styles.nav_wrapper} flex-grow`}>
         <div className={styles.nav_links}>
           <h2>Browse music</h2>
           <div className={`${styles.links} px-4`}>
