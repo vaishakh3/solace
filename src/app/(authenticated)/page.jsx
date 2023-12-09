@@ -12,10 +12,10 @@ export default async function Home() {
     <main className="w-full h-full p-7 flex flex-col">
         <NavControls />
         <div className='flex flex-grow gap-7'>
-            <div className='no-scroll flex-grow h-[73vh] overflow-auto'>
+            <div className='no-scroll w-[46vw] h-[73vh] overflow-auto'>
               <HomeSection />
             </div>
-            <div className='chat-border w-[21.75rem] flex flex-col'>
+            <div className='chat-border w-[23.5vw] flex flex-col'>
                {/* <AiChatbot /> */}
                <Quiz />
             </div>

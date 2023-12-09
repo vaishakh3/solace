@@ -6,6 +6,8 @@ function HomeSection() {
       <div className="text-white aspect-[1.98/1] rounded-lg py-8 px-10" style={{
         backgroundImage: "url(/images/featuredimg.png)",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}>
         <h2 className="text-[1.62906rem]">Featuring</h2>
         <div className="mt-12">
