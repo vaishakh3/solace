@@ -1,9 +1,10 @@
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import Provider from '@/providers/session-provider'
 import { getSession } from 'next-auth/react'
 
 const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ["400"], variable: "--font-poppins" })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <Provider session={session}>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${poppins.className}`}>{children}</body>
       </Provider>
     </html>
   )
