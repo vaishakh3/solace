@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
+import AudioPlayer from "@/components/AudioPlayer/AudioPlayer";
 
 
 
@@ -11,7 +12,9 @@ export default async function MainLayout({ children }) {
       </div>
       <div className=" bg-black rounded-[0.625rem]">{children}</div>
     </div>
-    <div className="blue-blur h-[10%] text-white">player</div>
+    <div className="blue-blur h-[10%] text-white">
+      <AudioPlayer/>
+    </div>
    </div>
   )
 }

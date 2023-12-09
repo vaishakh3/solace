@@ -1,0 +1,26 @@
+.wrapper{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.song_details{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.song_details h3{
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.16px;
+}
+
+.song_details p{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.16px;
+}
