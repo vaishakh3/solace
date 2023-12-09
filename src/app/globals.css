@@ -51,3 +51,7 @@ body {
   border-radius: 0.1875rem;
   outline: 1px solid slategrey;
 }
+
+.no-scroll::-webkit-scrollbar{
+  appearance: none;
+}

@@ -1,5 +1,7 @@
 import { getSession } from '@/app/api/auth/[...nextauth]/route'
 import AiChatbot from './_components/AiChatbot'
+import NavControls from './_components/NavControls'
+import HomeSection from './_components/HomeSection'
 
 
 export default async function Home() {
@@ -7,9 +9,11 @@ export default async function Home() {
   return (
 
     <main className="w-full h-full p-7 flex flex-col">
-        <div className='text-white min-h-[3rem]'>controls</div>
+        <NavControls />
         <div className='flex flex-grow gap-7'>
-            <div className='flex-grow'></div>
+            <div className='no-scroll flex-grow h-[73vh] overflow-auto'>
+              <HomeSection />
+            </div>
             <div className='chat-border w-[21.75rem] flex flex-col'>
               <AiChatbot />
             </div>
