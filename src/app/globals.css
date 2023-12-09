@@ -42,3 +42,16 @@ body {
   border-radius: 0.9375rem;
   background: radial-gradient(56.15% 100% at 100% 50.07%, #0D7061 0%, #154740 100%);
 }
+.chat::-webkit-scrollbar {
+  width: 0.1875rem;
+}
+ 
+.chat::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #525252;
+}
+ 
+.chat::-webkit-scrollbar-thumb {
+  background-color: #FFF;
+  border-radius: 0.1875rem;
+  outline: 1px solid slategrey;
+}
