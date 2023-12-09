@@ -7,7 +7,7 @@ export default async function Home() {
   return (
 
     <main className="w-full h-full p-7 flex flex-col">
-        <div className='text-white min-h-[3rem'>controls</div>
+        <div className='text-white min-h-[3rem]'>controls</div>
         <div className='flex flex-grow gap-7'>
             <div className='flex-grow'></div>
             <div className='chat-border w-[21.75rem] flex flex-col'>

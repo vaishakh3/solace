@@ -1,13 +1,29 @@
-import { cn } from "@/lib/cn";
+"use client"
+
 import { ArrowUp } from "lucide-react";
 import Message from "./Message";
+import { useEffect, useRef } from "react";
 
 function AiChatbot() {
+    const chatRef = useRef(null);
+
+    useEffect(() => {
+        if(chatRef.current){
+            chatRef.current.scrollTo({
+                top: chatRef.current.scrollHeight,
+                behavior: "smooth"
+            })
+        }
+    }, [])
+
   return (
     <>
       <h2 className="text-white text-xl p-5">e1even AI</h2>
-      <div className="flex-grow flex flex-col py-2 px-5 gap-5 overflow-auto">
+      <div ref={chatRef} className="chat flex-grow h-80 flex flex-col py-2 px-5 gap-5 overflow-auto">
         <Message from="user" />
+        <Message from="bot" />
+        <Message from="bot" />
+        <Message from="bot" />
         <Message from="bot" />
       </div>
       <form className="p-5">

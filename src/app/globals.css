@@ -37,3 +37,17 @@ body {
   border-radius: 0.9375rem;
   background-image: linear-gradient(206deg, #292929 17.56%, #424242 48.72%, #474747 66.39%, #434243 74.56%, #303030 85.66%, #1B1B1B 102.7%);
 }
+
+.chat::-webkit-scrollbar {
+  width: 0.1875rem;
+}
+ 
+.chat::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #525252;
+}
+ 
+.chat::-webkit-scrollbar-thumb {
+  background-color: #FFF;
+  border-radius: 0.1875rem;
+  outline: 1px solid slategrey;
+}
