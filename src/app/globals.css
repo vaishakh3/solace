@@ -37,3 +37,8 @@ body {
   border-radius: 0.9375rem;
   background-image: linear-gradient(206deg, #292929 17.56%, #424242 48.72%, #474747 66.39%, #434243 74.56%, #303030 85.66%, #1B1B1B 102.7%);
 }
+
+.quiz-border{
+  border-radius: 0.9375rem;
+  background: radial-gradient(56.15% 100% at 100% 50.07%, #0D7061 0%, #154740 100%);
+}
