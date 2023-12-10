@@ -15,10 +15,7 @@ function Message({ message, from }) {
           from === "bot" && "text-left",
           from === "user" && "text-right"
         )}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nihil
-          illo quos, dolore labore ullam laudantium repudiandae cum iste repellat
-          harum eveniet fugit reiciendis laborum ab similique, nam quibusdam
-          nulla.
+          {message}
         </div>
       </div>
     );
