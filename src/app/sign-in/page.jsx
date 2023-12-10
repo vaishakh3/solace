@@ -1,8 +1,17 @@
-import React from "react";
 import styles from "@/styles/welcome.module.css";
 import Link from "next/link";
+import SignInForm from "./_components/SignInForm";
+import { getSession } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-const SignInPage = () => {
+const SignInPage = async () => {
+
+  const session = await getSession();
+
+  if(session?.user){
+    redirect("/")
+  }
+
   return (
     <div className={styles.wrapper}>
       <nav>
@@ -17,32 +26,7 @@ const SignInPage = () => {
         <p className={styles.subtitle}>powered by e1even AI</p>
       </div>
       <div></div>
-
-      <div className={styles.signIn_wrapper}>
-        <h3>Sign up</h3>
-
-        <div className={styles.input_section}>
-          <div className={styles.input_group}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" />
-          </div>
-          <div className={styles.input_group}>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
-          </div>
-          <button style={{marginTop:'30px'}}>Sign in</button>
-
-            <div className={styles.or_section}>
-                <div className={styles.line}></div>
-                <p>OR</p>
-                <div className={styles.line}></div>
-            </div>
-
-          <button className={styles.google_btn}>
-            <img src="/icons/google.svg" alt="google" /> Sign up with Google
-          </button>
-        </div>
-      </div>
+      <SignInForm />  
     </div>
   );
 };
