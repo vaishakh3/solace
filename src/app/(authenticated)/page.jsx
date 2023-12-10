@@ -16,8 +16,8 @@ export default async function Home() {
               <HomeSection />
             </div>
             <div className='chat-border w-[23.5vw] flex flex-col'>
-               <AiChatbot />
-               {/* <Quiz /> */}
+               {/* <AiChatbot /> */}
+               <Quiz />
             </div>
         </div>
     </main>

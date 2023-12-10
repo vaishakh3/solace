@@ -46,13 +46,13 @@ const UserPreference = () => {
             >
               Settings
             </DropdownMenuPrimitive.Item>
-            <DropdownMenuPrimitive.Separator className="my-1 h-px bg-[#393939] dark:bg-[#393939]" />
+            <DropdownMenuPrimitive.Separator className="my-1 h-px bg-[#393939] dark:bg-[#393939] hover:bg-gray-900 dark:hover:bg-gray-900" />
             <DropdownMenuPrimitive.Item
               key={`signout`}
               asChild
             >
               <button className={clsx(
-                "flex cursor-default select-none items-center rounded-md p-4 text-xs outline-none",
+                "flex cursor-pointer w-full select-none items-center rounded-md p-4 text-xs outline-none",
                 "text-gray-400 focus:bg-[#262626] dark:text-white dark:focus:bg-[#262626]"
               )} onClick={() => signOut()}>Log Out</button>
             </DropdownMenuPrimitive.Item>
