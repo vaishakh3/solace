@@ -1,43 +1,51 @@
+"use client";
 // TODO: Add user preference component
+
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { useSession } from "next-auth/react";
 
-export default () => (
-  <DropdownMenu.Root>
-    <DropdownMenu.Trigger asChild>
-      <button className="rounded-full w-8 h-8" aria-label="user preference">
-        <img src="/images/cover.png" alt="username" />
-      </button>
-    </DropdownMenu.Trigger>
+function UserPreference() {
+  const { data: session } = useSession();
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <button className="rounded-full w-8 h-8" aria-label="user preference">
+          <img src={session?.user?.image ?? "/images/cover.png"} alt="username" />
+        </button>
+      </DropdownMenu.Trigger>
 
-    <DropdownMenu.Portal>
-      <DropdownMenu.Content>
-        <DropdownMenu.Label />
-        <DropdownMenu.Item />
-
-        <DropdownMenu.Group>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content>
+          <DropdownMenu.Label />
           <DropdownMenu.Item />
-        </DropdownMenu.Group>
 
-        <DropdownMenu.CheckboxItem>
-          <DropdownMenu.ItemIndicator />
-        </DropdownMenu.CheckboxItem>
+          <DropdownMenu.Group>
+            <DropdownMenu.Item />
+          </DropdownMenu.Group>
 
-        <DropdownMenu.RadioGroup>
-          <DropdownMenu.RadioItem>
+          <DropdownMenu.CheckboxItem>
             <DropdownMenu.ItemIndicator />
-          </DropdownMenu.RadioItem>
-        </DropdownMenu.RadioGroup>
+          </DropdownMenu.CheckboxItem>
 
-        <DropdownMenu.Sub>
-          <DropdownMenu.SubTrigger />
-          <DropdownMenu.Portal>
-            <DropdownMenu.SubContent />
-          </DropdownMenu.Portal>
-        </DropdownMenu.Sub>
+          <DropdownMenu.RadioGroup>
+            <DropdownMenu.RadioItem>
+              <DropdownMenu.ItemIndicator />
+            </DropdownMenu.RadioItem>
+          </DropdownMenu.RadioGroup>
 
-        <DropdownMenu.Separator />
-        <DropdownMenu.Arrow />
-      </DropdownMenu.Content>
-    </DropdownMenu.Portal>
-  </DropdownMenu.Root>
-);
+          <DropdownMenu.Sub>
+            <DropdownMenu.SubTrigger />
+            <DropdownMenu.Portal>
+              <DropdownMenu.SubContent />
+            </DropdownMenu.Portal>
+          </DropdownMenu.Sub>
+
+          <DropdownMenu.Separator />
+          <DropdownMenu.Arrow />
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
+  );
+}
+
+export default UserPreference;
