@@ -1,7 +1,8 @@
-import { getSession } from "@/app/api/auth/[...nextauth]/route";
+"use client";
 import AiChatbot from "../_components/AiChatbot";
 import NavControls from "../_components/NavControls";
 import Quiz from "../_components/Quiz";
+import { useState } from "react";
 
 export default async function MainLayout({ children }) {
   const [isChatOpen, setIsChatOpen] = useState(false);
