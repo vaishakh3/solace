@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "question": "If you were a weather condition right now, what would you be?",
+      "options": {
+        "A": "Sunny and bright",
+        "B": "Cloudy with a chance of rain",
+        "C": "Thunderstorms and lightning",
+        "D": "A calm and cool breeze"
+      }
+    },
+    {
+      "id": 2,
+      "question": "Choose a color that best describes your current mood:",
+      "options": {
+        "A": "Vibrant red",
+        "B": "Mellow yellow",
+        "C": "Deep blue",
+        "D": "Tranquil green"
+      }
+    },
+    {
+      "id": 3,
+      "question": "Which landscape resonates with how you feel today?",
+      "options": {
+        "A": "A bustling cityscape",
+        "B": "A serene beach",
+        "C": "A quiet forest",
+        "D": "A majestic mountain range"
+      }
+    },
+    {
+      "id": 4,
+      "question": "If your current mood was a flavor, what would it taste like?",
+      "options": {
+        "A": "Sweet like candy",
+        "B": "Sour like lemon",
+        "C": "Bitter like dark chocolate",
+        "D": "Spicy like chili"
+      }
+    },
+    {
+      "id": 5,
+      "question": "What kind of music does your heart beat to right now?",
+      "options": {
+        "A": "Upbeat and fast",
+        "B": "Slow and calming",
+        "C": "Loud and energetic",
+        "D": "Soft and melodic"
+      }
+    },
+    {
+      "id": 6,
+      "question": "If you could teleport anywhere right now, where would you go?",
+      "options": {
+        "A": "A busy metropolitan city",
+        "B": "A quiet countryside",
+        "C": "An adventurous jungle",
+        "D": "Home, sweet home"
+      }
+    },
+    {
+      "id": 7,
+      "question": "What activity would you choose if you had a day off?",
+      "options": {
+        "A": "Adventure sports",
+        "B": "Reading or relaxing",
+        "C": "Socializing with friends",
+        "D": "Creative activities like painting or writing"
+      }
+    },
+    {
+      "id": 8,
+      "question": "Pick a movie genre that reflects your current mood:",
+      "options": {
+        "A": "Comedy",
+        "B": "Romance",
+        "C": "Action/Adventure",
+        "D": "Drama"
+      }
+    }
+  ]
