@@ -1,0 +1,41 @@
+.artist_info {
+  display: flex;
+  gap: 32px;
+}
+.info {
+  color: #fff;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.info h2 {
+  color: var(--text-text-on-color, #fff);
+  font-size: 31.065px;
+  font-weight: 500;
+  line-height: 28.369px;
+  letter-spacing: 0.252px;
+}
+.info p {
+  color: var(--text-text-placeholder, #a8a8a8);
+  font-size: 10.065px;
+  font-weight: 400;
+  letter-spacing: 0.252px;
+}
+.btns {
+  margin-top: 18px;
+  display: flex;
+  gap: 21px;
+}
+
+.tracks_table{
+    color: #fff;
+    width: 100%;
+    background-color: #a8a8a8;   
+}
+/* .tracks_table:first-child{
+    text-align: left;
+} */
+/* .tracks_table:nth-child(2){
+    text-align: right;
+} */
