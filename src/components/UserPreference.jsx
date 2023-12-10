@@ -3,58 +3,18 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Bell } from "lucide-react";
 import { clsx } from "clsx";
 import React, { ReactNode, useState } from "react";
-import { signOut } from "next-auth/react";
-// import Button from "./shared/button";
+import { signOut, useSession } from "next-auth/react";
 
-const generalMenuItems = [
-  {
-    label: "New File",
-    icon: <Bell className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+N",
-  },
-  {
-    label: "Settings",
-    icon: <Bell className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+,",
-  },
-];
-
-const regionToolMenuItems = [
-  {
-    label: "Frame",
-    icon: <Bell className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+F",
-  },
-  {
-    label: "Crop",
-    icon: <Bell className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+S",
-  },
-];
-
-const users = [
-  {
-    name: "Adam",
-    url: "https://github.com/adamwathan.png",
-  },
-  {
-    name: "Steve",
-    url: "https://github.com/steveschoger.png",
-  },
-  {
-    name: "Robin",
-    url: "https://github.com/robinmalfait.png",
-  },
-];
 
 const UserPreference = () => {
+  const { data: session } = useSession();
 
   return (
     <div className="relative inline-block text-left">
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger asChild>
           <button className="h-8 w-8 rounded-full">
-            <img className="h-full w-full" src="/images/cover.png" alt="" />
+            <img className="h-full w-full" src={session?.user?.image ?? "/images/cover.png"} alt={session?.user?.name ?? "cover image"} />
           </button>
         </DropdownMenuPrimitive.Trigger>
 
