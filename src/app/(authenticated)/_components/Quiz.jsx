@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { MoveRight } from "lucide-react";
 import styles from "@/styles/quiz.module.css";
 import quiz from "@/data/quiz.json";
+import { useMutation } from 'react-query';
+import axios from 'axios';
 
 function Quiz() {
   const [questions, setQuestions] = useState(quiz);
@@ -13,6 +15,17 @@ function Quiz() {
   const [hoverCounts, setHoverCounts] = useState({});
   const [selectCount, setSelectCount] = useState(0);
   const [responses, setResponses] = useState([]);
+
+  const questionaireMutation = useMutation((responses) => {
+    return axios.post('/api/questionnaire', responses)
+  }, {
+    onSuccess: (data) => {
+      console.log(data.data)
+    },
+    onError: (error) => {
+      console.log(error)
+    }
+  })
 
   useEffect(() => {
     setSelectedQuestion(questions[questionNo]);
@@ -27,11 +40,12 @@ function Quiz() {
     setSelectedAnswer(answer);
   };
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion = async () => {
     const responseTime = Date.now() - startTime;
     const newResponse = {
       questionID: selectedQuestion.id,
-      answer: selectedAnswer,
+      questionText: selectedQuestion.question,
+      answerText: selectedAnswer,
       responseTime,
       hoverCount: hoverCounts[selectedQuestion.id] || 0,
       selectCount
@@ -58,7 +72,7 @@ function Quiz() {
       setSelectedAnswer('');
     } else {
       // Handle end of quiz logic here, such as submitting responses
-      console.log(responses);
+      await questionaireMutation.mutateAsync(responses);
     }
   };
 
