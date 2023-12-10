@@ -5,8 +5,9 @@ import styles from "@/styles/quiz.module.css";
 import quiz from "@/data/quiz.json";
 import { useMutation } from 'react-query';
 import axios from 'axios';
+import { useMusic } from '@/stores/musics';
 
-function Quiz() {
+function Quiz({ setIsChatOpen }) {
   const [questions, setQuestions] = useState(quiz);
   const [selectedQuestion, setSelectedQuestion] = useState({});
   const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -16,11 +17,15 @@ function Quiz() {
   const [selectCount, setSelectCount] = useState(0);
   const [responses, setResponses] = useState([]);
 
+  const { setMusic } = useMusic();
+
   const questionaireMutation = useMutation((responses) => {
     return axios.post('/api/questionnaire', responses)
   }, {
     onSuccess: (data) => {
       console.log(data.data)
+      setMusic(data.data)
+      setIsChatOpen(true)
     },
     onError: (error) => {
       console.log(error)
