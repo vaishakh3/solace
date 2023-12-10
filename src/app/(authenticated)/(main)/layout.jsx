@@ -14,8 +14,8 @@ export default async function MainLayout({ children }) {
              {children}
             </div>
             <div className='chat-border w-[23.5vw] flex flex-col'>
-               {/* <AiChatbot /> */}
-               <Quiz />
+               <AiChatbot />
+               {/* <Quiz /> */}
             </div>
         </div>
     </main>
