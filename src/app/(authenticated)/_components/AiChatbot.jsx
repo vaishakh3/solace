@@ -6,28 +6,30 @@ import { useEffect, useRef } from "react";
 import { useState } from "react";
 import { useMutation } from "react-query";
 import axios from "axios";
+import { useChats } from "@/stores/chats";
+import { useSession } from "next-auth/react";
 
 function AiChatbot() {
-  const [chats, setChats] = useState([
-    {
-      from: "bot",
-      message: "Hi, I'm e1even, your AI assistant. How are you feeling today?",
-      timestamp: Date.now(),
-    },
-  ]);
+  const { chats, addChat } = useChats();
 
-  const chatMutation = useMutation((prompt) => {
-    return axios.post("/api/chat", { prompt });
+  const { data: session } = useSession({
+
+  });
+ 
+
+  // console.log(chats)
+
+  const chatMutation = useMutation((chats) => {
+    return axios.post("/api/chat", chats);
   }, {
     onSuccess: (data) => {
-      setChats(prev => ([
-        ...prev,
+      addChat(
         {
           from: "bot",
-          message: data.message,
+          message: data.data,
           timestamp: Date.now(),
         },
-      ]));
+      );
       scrollToBottom()
     },
     onError: (err) => {
@@ -35,23 +37,42 @@ function AiChatbot() {
     }
   })
 
+  useEffect(() => {
+    if(session?.user){
+      addChat({
+        from: "bot",
+        message: `Hello, ${session?.user?.name ?? "User"}. I'm e1even, How are you feeling today?`,
+        timestamp: Date.now(),
+      })
+    }
+  }, [session?.user?.name])
+
   const [prompt, setPrompt] = useState("");
   const chatRef = useRef(null);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (prompt.length > 2) {
-      setChats(prev => ([
-        ...prev,
+      
+      setPrompt("");
+      scrollToBottom()
+      // TODO handle prompt
+
+      addChat(
         {
           from: "user",
           message: prompt,
           timestamp: Date.now(),
         },
-      ]));
-      setPrompt("");
-      scrollToBottom()
-      // TODO handle prompt
+      );
+
+      await chatMutation.mutateAsync([...chats, {
+        from: "user",
+        message: prompt,
+        timestamp: Date.now(),
+      }])
+
+     
     }
   }
 
