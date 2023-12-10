@@ -1,6 +1,6 @@
 "use client";
 import HistoryButtons from "@/components/HistoryButtons";
-import UserPreference from "@/components/userPreference";
+import UserPreference from "@/components/UserPreference";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useSession } from "next-auth/react";
 import React from "react";

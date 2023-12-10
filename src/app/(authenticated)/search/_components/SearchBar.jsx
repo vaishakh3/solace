@@ -3,7 +3,7 @@ import React from 'react'
 
 function SearchBar() {
   return (
-    <form className='relative'>
+    <form className='relative w-[55vw]'>
           <input
             className="w-full min-h-[2.3125rem] rounded-[4.375rem] bg-transparent border border-[#8D8D8D] py-2 pr-1 pl-10 text-white placeholder:text-[#A8A8A8] text-sm bg-[#393939]"
             placeholder="What do you want to listen to?"
